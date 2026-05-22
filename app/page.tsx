@@ -1,65 +1,201 @@
-import Image from "next/image";
+import Link from "next/link";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+  FaTelegramPlane,
+} from "react-icons/fa";
+
+const projects = [
+  {
+    title: "BROWN App API",
+    desc: "Mobile app backend API, order flow, payment, loyalty and integration.",
+    tech: "PHP, MySQL, Business Central",
+  },
+  {
+    title: "School Management System",
+    desc: "Manage students, teachers, classrooms, subjects and attendance.",
+    tech: "Spring Boot, React, MySQL",
+  },
+  {
+    title: "Coffee POS Integration",
+    desc: "POS and backend integration for store operation and finance process.",
+    tech: "PHP, SQL Server, LS/BC",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-[#f7f3ec] text-[#2b2118]">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full z-50 bg-[#f7f3ec]/80 backdrop-blur border-b border-[#ddd2c4]">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="font-bold text-xl">BRN.DEV</h1>
+
+          <div className="flex gap-6 text-sm font-medium">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <p className="uppercase tracking-[0.3em] text-sm mb-4">
+              Backend Developer
+            </p>
+
+            <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+              Hi, I’m <br />
+              <span className="text-[#8b5e34]">Brn</span>
+            </h2>
+
+            <p className="mt-6 text-lg text-[#6b5a4a] max-w-lg">
+              I build backend systems, APIs, mobile app integrations, POS
+              systems, and web applications with clean and scalable structure.
+            </p>
+
+            <div className="mt-8 flex gap-4">
+              <a
+                href="#work"
+                className="px-6 py-3 bg-[#2b2118] text-white rounded-full"
+              >
+                View Work
+              </a>
+
+              <a
+                href="#contact"
+                className="px-6 py-3 border border-[#2b2118] rounded-full"
+              >
+                Contact Me
+              </a>
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-[#d8b98f] flex items-center justify-center shadow-2xl">
+              <div className="w-60 h-60 md:w-80 md:h-80 rounded-full bg-[#2b2118] text-white flex items-center justify-center text-6xl font-bold">
+                BRN
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <p className="uppercase tracking-[0.3em] text-sm mb-4">About</p>
+
+          <h3 className="text-4xl font-bold mb-6">
+            Developer focused on real business systems.
+          </h3>
+
+          <p className="text-[#6b5a4a] text-lg max-w-3xl leading-8">
+            I have experience building backend APIs, payment integrations,
+            loyalty systems, POS integrations, school management systems,
+            dashboards, and automation workflows. I care about clean structure,
+            performance, reusable code, and real production usage.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Work */}
+      <section id="work" className="py-24 px-6 bg-[#efe7dc]">
+        <div className="max-w-6xl mx-auto">
+          <p className="uppercase tracking-[0.3em] text-sm mb-4">Work</p>
+
+          <h3 className="text-4xl font-bold mb-10">Selected Projects</h3>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="bg-[#f7f3ec] rounded-3xl p-6 shadow-sm hover:shadow-xl transition"
+              >
+                <h4 className="text-2xl font-bold mb-3">{project.title}</h4>
+                <p className="text-[#6b5a4a] mb-6">{project.desc}</p>
+                <span className="text-sm font-semibold text-[#8b5e34]">
+                  {project.tech}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/work"
+              className="px-6 py-3 bg-[#2b2118] text-white rounded-full hover:bg-[#8b5e34] transition"
+            >
+              See More
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-24 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="uppercase tracking-[0.3em] text-sm mb-4">Contact</p>
+
+          <h3 className="text-4xl font-bold mb-6">
+            Let’s build something useful.
+          </h3>
+
+          <p className="text-[#6b5a4a] mb-8">
+            You can contact me through these platforms.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="https://facebook.com/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-[#2b2118] text-white rounded-full flex items-center gap-2"
+            >
+              <FaFacebookF  size={18} />
+              Facebook
+            </a>
+
+            <a
+              href="https://t.me/your-telegram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-[#2b2118] text-white rounded-full flex items-center gap-2"
+            >
+              <FaTelegramPlane size={18} />
+              Telegram
+            </a>
+
+            <a
+              href="https://linkedin.com/in/your-linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-[#2b2118] text-white rounded-full flex items-center gap-2"
+            >
+              <FaLinkedinIn  size={18} />
+              LinkedIn
+            </a>
+
+            <a
+              href="https://instagram.com/your-instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-[#2b2118] text-white rounded-full flex items-center gap-2"
+            >
+              <FaInstagram  size={18} />
+              Instagram
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-6 text-center text-sm text-[#6b5a4a] border-t border-[#ddd2c4]">
+        © 2026 BRN.DEV. All rights reserved.
+      </footer>
+    </main>
   );
 }
