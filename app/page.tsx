@@ -1,201 +1,110 @@
 import Link from "next/link";
-import {
-  FaFacebookF,
-  FaLinkedinIn,
-  FaInstagram,
-  FaTelegramPlane,
-} from "react-icons/fa";
-
-const projects = [
-  {
-    title: "BROWN App API",
-    desc: "Mobile app backend API, order flow, payment, loyalty and integration.",
-    tech: "PHP, MySQL, Business Central",
-  },
-  {
-    title: "School Management System",
-    desc: "Manage students, teachers, classrooms, subjects and attendance.",
-    tech: "Spring Boot, React, MySQL",
-  },
-  {
-    title: "Coffee POS Integration",
-    desc: "POS and backend integration for store operation and finance process.",
-    tech: "PHP, SQL Server, LS/BC",
-  },
-];
+import SiteNav from "./components/SiteNav";
+import SiteFooter from "./components/SiteFooter";
+import Receipt from "./components/Receipt";
+import ProjectLedger from "./components/ProjectLedger";
+import SkillList from "./components/SkillList";
+import ContactSection from "./components/ContactSection";
+import KramaBand from "./components/KramaBand";
+import Portrait from "./components/Portrait";
+import { projects } from "./data";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f7f3ec] text-[#2b2118]">
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#f7f3ec]/80 backdrop-blur border-b border-[#ddd2c4]">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="font-bold text-xl">BRN.DEV</h1>
+    <>
+      <header className="bg-cream text-ink">
+        <SiteNav />
 
-          <div className="flex gap-6 text-sm font-medium">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
+        <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 pb-24 pt-10 lg:grid-cols-[1.25fr_1fr] lg:pb-32 lg:pt-16">
           <div>
-            <p className="uppercase tracking-[0.3em] text-sm mb-4">
-              Backend Developer
+            <h1 className="text-balance text-[clamp(2.75rem,7vw,5.5rem)] font-bold leading-[0.98] tracking-[-0.03em]">
+              Brn builds the backend behind orders, payments and POS.
+            </h1>
+
+            <p className="mt-8 max-w-[52ch] text-lg leading-8 text-slate">
+              I’m a backend developer working on APIs, mobile app integrations,
+              POS systems and web applications, with a clean and scalable
+              structure.
             </p>
 
-            <h2 className="text-5xl md:text-7xl font-bold leading-tight">
-              Hi, I’m <br />
-              <span className="text-[#8b5e34]">Brn</span>
-            </h2>
-
-            <p className="mt-6 text-lg text-[#6b5a4a] max-w-lg">
-              I build backend systems, APIs, mobile app integrations, POS
-              systems, and web applications with clean and scalable structure.
-            </p>
-
-            <div className="mt-8 flex gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#work"
-                className="px-6 py-3 bg-[#2b2118] text-white rounded-full"
+                className="rounded-md bg-ink px-6 py-3 font-semibold text-cream"
               >
-                View Work
+                View work
               </a>
-
               <a
                 href="#contact"
-                className="px-6 py-3 border border-[#2b2118] rounded-full"
+                className="rounded-md border border-ink px-6 py-3 font-semibold"
               >
-                Contact Me
+                Contact me
               </a>
             </div>
           </div>
 
-          <div className="flex justify-center">
-            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-[#d8b98f] flex items-center justify-center shadow-2xl">
-              <div className="w-60 h-60 md:w-80 md:h-80 rounded-full bg-[#2b2118] text-white flex items-center justify-center text-6xl font-bold">
-                BRN
+          <Receipt />
+        </div>
+
+        <KramaBand />
+      </header>
+
+      <main>
+        <section id="about" className="scroll-mt-4 bg-paper">
+          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-12">
+            <div className="md:col-span-5">
+              <h2 className="text-balance text-4xl font-bold tracking-tight md:text-5xl">
+                Developer focused on real business systems.
+              </h2>
+
+              <Portrait className="mt-12 max-w-[18rem]" />
+            </div>
+
+            <div className="md:col-span-6 md:col-start-7">
+              <p className="max-w-[56ch] text-lg leading-8 text-slate">
+                I have experience building backend APIs, payment integrations,
+                loyalty systems, POS integrations, school management systems,
+                dashboards, and automation workflows. I care about clean
+                structure, performance, reusable code, and real production
+                usage.
+              </p>
+
+              <div className="mt-10">
+                <SkillList />
               </div>
+
+              <Link
+                href="/about"
+                className="mt-8 inline-block font-semibold text-ink underline underline-offset-4"
+              >
+                More about me
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* About */}
-      <section id="about" className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <p className="uppercase tracking-[0.3em] text-sm mb-4">About</p>
+        <section id="work" className="scroll-mt-4 bg-cream">
+          <div className="mx-auto max-w-6xl px-6 py-24">
+            <h2 className="mb-12 text-4xl font-bold tracking-tight md:text-5xl">
+              Selected projects
+            </h2>
 
-          <h3 className="text-4xl font-bold mb-6">
-            Developer focused on real business systems.
-          </h3>
+            <ProjectLedger items={projects.slice(0, 3)} />
 
-          <p className="text-[#6b5a4a] text-lg max-w-3xl leading-8">
-            I have experience building backend APIs, payment integrations,
-            loyalty systems, POS integrations, school management systems,
-            dashboards, and automation workflows. I care about clean structure,
-            performance, reusable code, and real production usage.
-          </p>
-        </div>
-      </section>
-
-      {/* Work */}
-      <section id="work" className="py-24 px-6 bg-[#efe7dc]">
-        <div className="max-w-6xl mx-auto">
-          <p className="uppercase tracking-[0.3em] text-sm mb-4">Work</p>
-
-          <h3 className="text-4xl font-bold mb-10">Selected Projects</h3>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-[#f7f3ec] rounded-3xl p-6 shadow-sm hover:shadow-xl transition"
-              >
-                <h4 className="text-2xl font-bold mb-3">{project.title}</h4>
-                <p className="text-[#6b5a4a] mb-6">{project.desc}</p>
-                <span className="text-sm font-semibold text-[#8b5e34]">
-                  {project.tech}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 flex justify-center">
             <Link
               href="/work"
-              className="px-6 py-3 bg-[#2b2118] text-white rounded-full hover:bg-[#8b5e34] transition"
+              className="mt-8 inline-block font-semibold text-ink underline underline-offset-4"
             >
-              See More
+              See all projects
             </Link>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Contact */}
-      <section id="contact" className="py-24 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="uppercase tracking-[0.3em] text-sm mb-4">Contact</p>
+        <ContactSection id="contact" />
+        <KramaBand />
+      </main>
 
-          <h3 className="text-4xl font-bold mb-6">
-            Let’s build something useful.
-          </h3>
-
-          <p className="text-[#6b5a4a] mb-8">
-            You can contact me through these platforms.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="https://facebook.com/your-profile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-[#2b2118] text-white rounded-full flex items-center gap-2"
-            >
-              <FaFacebookF  size={18} />
-              Facebook
-            </a>
-
-            <a
-              href="https://t.me/your-telegram"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-[#2b2118] text-white rounded-full flex items-center gap-2"
-            >
-              <FaTelegramPlane size={18} />
-              Telegram
-            </a>
-
-            <a
-              href="https://linkedin.com/in/your-linkedin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-[#2b2118] text-white rounded-full flex items-center gap-2"
-            >
-              <FaLinkedinIn  size={18} />
-              LinkedIn
-            </a>
-
-            <a
-              href="https://instagram.com/your-instagram"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-[#2b2118] text-white rounded-full flex items-center gap-2"
-            >
-              <FaInstagram  size={18} />
-              Instagram
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <footer className="py-6 text-center text-sm text-[#6b5a4a] border-t border-[#ddd2c4]">
-        © 2026 BRN.DEV. All rights reserved.
-      </footer>
-    </main>
+      <SiteFooter />
+    </>
   );
 }

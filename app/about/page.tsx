@@ -1,35 +1,54 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import SiteNav from "../components/SiteNav";
+import SiteFooter from "../components/SiteFooter";
+import SkillList from "../components/SkillList";
+import Portrait from "../components/Portrait";
+
+export const metadata: Metadata = { title: "About" };
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#f7f3ec] text-[#2b2118] px-6 py-24">
-      <div className="max-w-4xl mx-auto">
-        <Link href="/" className="text-sm text-[#8b5e34]">
-          ← Back Home
-        </Link>
+    <>
+      <SiteNav />
 
-        <h1 className="text-5xl font-bold mt-8 mb-6">About Me</h1>
+      <main className="flex-1">
+        <div className="mx-auto max-w-6xl px-6 pb-24 pt-10">
+          <div className="grid items-end gap-14 md:grid-cols-12">
+            <div className="md:col-span-8">
+              <h1 className="text-5xl font-bold tracking-[-0.03em] md:text-7xl">
+                About me
+              </h1>
 
-        <p className="text-lg text-[#6b5a4a] leading-8">
-          Hi, I’m Brn, a backend developer focused on building APIs, mobile app
-          systems, POS integrations, dashboards, and automation workflows.
-        </p>
+              <p className="mt-8 max-w-[56ch] text-xl leading-9 text-slate">
+                Hi, I’m Brn, a backend developer focused on building APIs,
+                mobile app systems, POS integrations, dashboards, and automation
+                workflows.
+              </p>
+            </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mt-12">
-          <div className="bg-[#efe7dc] p-6 rounded-3xl">
-            <h2 className="text-2xl font-bold mb-3">Skills</h2>
-            <p>PHP, Laravel, Spring Boot, React, Next.js, MySQL, SQL Server</p>
+            <Portrait className="max-w-[16rem] md:col-span-3 md:col-start-10" />
           </div>
 
-          <div className="bg-[#efe7dc] p-6 rounded-3xl">
-            <h2 className="text-2xl font-bold mb-3">Experience</h2>
-            <p>
+          <div className="mt-16 grid gap-12 md:grid-cols-12">
+            <h2 className="text-2xl font-semibold tracking-tight md:col-span-4">
+              Skills
+            </h2>
+            <div className="md:col-span-8">
+              <SkillList />
+            </div>
+
+            <h2 className="text-2xl font-semibold tracking-tight md:col-span-4">
+              Experience
+            </h2>
+            <p className="max-w-[56ch] text-lg leading-8 text-slate md:col-span-8">
               API development, payment integration, loyalty systems, and POS
               integration.
             </p>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+
+      <SiteFooter />
+    </>
   );
 }
