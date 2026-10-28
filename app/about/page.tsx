@@ -20,7 +20,7 @@ export default function AboutPage() {
               </h1>
 
               <p className="mt-8 max-w-[56ch] text-xl leading-9 text-slate">
-                Hi, I’m Brn, a backend developer focused on building APIs,
+                Hi, I’m PHEAROM, a backend developer focused on building APIs,
                 mobile app systems, POS integrations, dashboards, and automation
                 workflows.
               </p>

@@ -3,12 +3,11 @@ import path from "node:path";
 import Image from "next/image";
 import KramaBand from "./KramaBand";
 
-// Drop your photo into the public folder as one of these names and it shows up here.
 const photoNames = ["profile.jpg", "profile.jpeg", "profile.png", "profile.webp"];
 
 export default function Portrait({ className = "" }: { className?: string }) {
   const photo = photoNames.find((name) =>
-    fs.existsSync(path.join(process.cwd(), "public", name)),
+    fs.existsSync(path.join(process.cwd(), "public", "images", name)),
   );
 
   return (
@@ -21,15 +20,15 @@ export default function Portrait({ className = "" }: { className?: string }) {
       <div className="relative aspect-[4/5] overflow-hidden bg-ink">
         {photo ? (
           <Image
-            src={`/${photo}`}
-            alt="Portrait of Brn"
+            src={`/images/${photo}`}
+            alt="Portrait of PHEAROM"
             fill
             sizes="(min-width: 768px) 320px, 80vw"
             className="object-cover"
           />
         ) : (
           <div className="flex h-full items-center justify-center pb-6 text-7xl font-bold tracking-tight text-cream">
-            BRN
+            PHEAROM
           </div>
         )}
 

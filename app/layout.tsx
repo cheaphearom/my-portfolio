@@ -16,11 +16,11 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Brn | Backend developer",
-    template: "%s | Brn",
+    default: "PHEAROM | Backend developer",
+    template: "%s | PHEAROM",
   },
   description:
-    "Brn is a backend developer building APIs, mobile app integrations, POS systems and web applications.",
+    "PHEAROM is a backend developer building APIs, mobile app integrations, POS systems and web applications.",
 };
 
 export default function RootLayout({

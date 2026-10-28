@@ -18,7 +18,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 pb-24 pt-10 lg:grid-cols-[1.25fr_1fr] lg:pb-32 lg:pt-16">
           <div>
             <h1 className="text-balance text-[clamp(2.75rem,7vw,5.5rem)] font-bold leading-[0.98] tracking-[-0.03em]">
-              Brn builds the backend behind orders, payments and POS.
+              Phearom builds the backend behind orders, payments and POS.
             </h1>
 
             <p className="mt-8 max-w-[52ch] text-lg leading-8 text-slate">

@@ -16,7 +16,7 @@ export default function Receipt() {
       <div className="receipt-feed">
         <div className="receipt bg-receipt px-7 pt-8 font-mono text-[0.8rem] leading-6 text-ink">
           <p className="text-center text-base font-bold tracking-tight">
-            BRN.DEV
+            PHEAROM.DEV
           </p>
           <p className="text-center text-ink/70">Backend development</p>
 
