@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 const inputClass =
-  "mt-1 w-full rounded-md border border-ink/30 bg-white px-3 py-2 text-ink placeholder:text-slate/60";
+  "mt-1 w-full rounded-xl border border-ink/25 bg-white/90 px-3 py-2 text-[#1a1916] placeholder:text-[#6b655b]";
 
 export function Field({
   label,
@@ -128,7 +128,7 @@ export function SubmitButton({
   return (
     <button
       type="submit"
-      className={`rounded-md px-4 py-2 text-sm font-semibold ${tones[tone]}`}
+      className={`rounded-full px-4 py-2 text-sm font-semibold ${tones[tone]}`}
     >
       {children}
     </button>
@@ -145,14 +145,14 @@ export function Banner({
   const errorText = Array.isArray(error) ? error[0] : error;
   if (errorText) {
     return (
-      <p role="alert" className="mb-6 rounded-md border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
+      <p role="alert" className="mb-6 rounded-2xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
         {errorText}
       </p>
     );
   }
   if (saved) {
     return (
-      <p role="status" className="mb-6 rounded-md border border-green-300 bg-green-50 px-4 py-3 text-sm text-green-800">
+      <p role="status" className="mb-6 rounded-2xl border border-green-300 bg-green-50 px-4 py-3 text-sm text-green-800">
         Saved. The public site updates within a few seconds.
       </p>
     );
@@ -168,7 +168,7 @@ export function PageTitle({
   description?: string;
 }) {
   return (
-    <div className="mb-8">
+    <div className="glass mb-8 rounded-3xl px-6 py-5">
       <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
       {description ? <p className="mt-2 max-w-[60ch] text-slate">{description}</p> : null}
     </div>
@@ -177,7 +177,7 @@ export function PageTitle({
 
 export function NoDatabase() {
   return (
-    <div className="rounded-md border border-ink/20 bg-white p-6">
+    <div className="glass rounded-3xl p-6">
       <h1 className="text-2xl font-bold">Database not connected</h1>
       <p className="mt-3 max-w-[60ch] text-slate">
         Set <code className="font-mono">DATABASE_URL</code> in{" "}
@@ -201,7 +201,7 @@ export function AddNew({
 }) {
   return (
     <details
-      className="mb-8 overflow-hidden rounded-md border-2 border-ink bg-white"
+      className="glass mb-8 overflow-hidden rounded-3xl"
       open={defaultOpen}
     >
       <summary className="flex cursor-pointer list-none items-center gap-3 bg-ink px-4 py-3 font-semibold text-cream [&::-webkit-details-marker]:hidden">
@@ -231,7 +231,7 @@ export function EditableItem({
   id: number;
 }) {
   return (
-    <details className="rounded-md border border-ink/20 bg-white">
+    <details className="glass rounded-2xl">
       <summary className="cursor-pointer select-none px-4 py-3 font-medium">
         {summary}
       </summary>

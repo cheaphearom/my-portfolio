@@ -13,9 +13,7 @@ export default async function ContactPage() {
 
   return (
     <>
-      <div className="bg-ink">
-        <SiteNav onDark />
-      </div>
+      <SiteNav />
 
       <main className="flex flex-1 flex-col">
         <ContactSection profile={profile} fill asPageTitle withForm />

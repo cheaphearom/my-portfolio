@@ -11,13 +11,13 @@ export default function PanelLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-paper md:flex">
-      <aside className="bg-ink text-cream md:sticky md:top-0 md:h-screen md:w-60 md:shrink-0 md:overflow-y-auto">
+    <div className="min-h-screen md:flex">
+      <aside className="glass-dark m-3 rounded-3xl md:sticky md:top-4 md:m-4 md:h-[calc(100vh-2rem)] md:w-60 md:shrink-0 md:overflow-y-auto">
         <div className="flex h-full flex-col px-5 py-6">
           <Link href="/admin" className="text-lg font-bold tracking-tight">
             PHEAROM.DEV
           </Link>
-          <p className="text-xs text-cream/60">Admin portal</p>
+          <p className="text-xs text-cream/80">Admin portal</p>
 
           <AdminNav />
 
@@ -32,7 +32,7 @@ export default function PanelLayout({
             <form action={logout}>
               <button
                 type="submit"
-                className="w-full rounded-md border border-cream/50 px-3 py-2 text-left"
+                className="w-full rounded-full border border-cream/50 px-4 py-2 text-left"
               >
                 Sign out
               </button>

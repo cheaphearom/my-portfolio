@@ -37,9 +37,7 @@ export default async function MessagesPage({
         {rows.map((message) => (
           <li
             key={message.id}
-            className={`rounded-md border bg-white p-5 ${
-              message.read ? "border-ink/15" : "border-ink"
-            }`}
+            className={`glass rounded-3xl p-5 ${message.read ? "" : "ring-2 ring-ink"}`}
           >
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <p className="font-semibold">

@@ -39,7 +39,7 @@ export default async function DashboardPage() {
           <li key={card.href}>
             <Link
               href={card.href}
-              className="block rounded-md border border-ink/20 bg-white p-5 hover:border-ink"
+              className="glass glass-hover block rounded-3xl p-5"
             >
               <p className="text-4xl font-bold tracking-tight">{card.value}</p>
               <p className="mt-1 text-slate">{card.label}</p>

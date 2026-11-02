@@ -15,7 +15,7 @@ export default function LoginForm() {
           type="email"
           autoComplete="username"
           required
-          className="mt-1 w-full rounded-md border border-ink/30 bg-white px-3 py-2"
+          className="mt-1 w-full rounded-xl border border-ink/25 bg-white/80 px-3 py-2"
         />
       </label>
 
@@ -26,7 +26,7 @@ export default function LoginForm() {
           type="password"
           autoComplete="current-password"
           required
-          className="mt-1 w-full rounded-md border border-ink/30 bg-white px-3 py-2"
+          className="mt-1 w-full rounded-xl border border-ink/25 bg-white/80 px-3 py-2"
         />
       </label>
 
@@ -39,7 +39,7 @@ export default function LoginForm() {
       <button
         type="submit"
         disabled={pending}
-        className="w-full rounded-md bg-ink px-4 py-2.5 font-semibold text-cream disabled:opacity-60"
+        className="w-full rounded-full bg-ink px-4 py-2.5 font-semibold text-cream disabled:opacity-60"
       >
         {pending ? "Signing in…" : "Sign in"}
       </button>

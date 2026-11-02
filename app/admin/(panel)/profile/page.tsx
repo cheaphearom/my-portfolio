@@ -37,7 +37,7 @@ export default async function ProfilePage({
       />
       <Banner saved={saved} error={error} />
 
-      <form action={saveProfile} className="space-y-5 rounded-md border border-ink/20 bg-white p-6">
+      <form action={saveProfile} className="glass space-y-5 rounded-3xl p-6">
         <div className="grid gap-5 sm:grid-cols-2">
           <Field label="Name" name="name" defaultValue={profile.name} required />
           <Field label="Headline" name="headline" defaultValue={profile.headline} />

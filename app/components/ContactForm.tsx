@@ -4,14 +4,14 @@ import { useActionState } from "react";
 import { sendMessage } from "../actions/contact";
 
 const inputClass =
-  "mt-1 w-full rounded-md border border-cream/40 bg-transparent px-3 py-2.5 text-cream placeholder:text-cream/50";
+  "mt-1 w-full rounded-xl border border-cream/35 bg-white/10 px-3 py-2.5 text-cream placeholder:text-cream/50";
 
 export default function ContactForm() {
   const [state, action, pending] = useActionState(sendMessage, undefined);
 
   if (state?.ok) {
     return (
-      <p role="status" className="rounded-md border border-cream/40 p-5 text-lg">
+      <p role="status" className="rounded-2xl border border-cream/40 p-5 text-lg">
         Thanks, your message was sent. I’ll get back to you soon.
       </p>
     );
@@ -56,7 +56,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="rounded-md bg-cream px-6 py-3 font-semibold text-ink disabled:opacity-60"
+        className="rounded-full bg-cream px-6 py-3 font-semibold text-ink disabled:opacity-60"
       >
         {pending ? "Sending…" : "Send message"}
       </button>

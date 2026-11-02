@@ -9,7 +9,7 @@ const lines = [
 
 export default function Receipt() {
   return (
-    <div aria-hidden="true" className="mx-auto w-full max-w-sm lg:ml-auto lg:mr-0">
+    <div aria-hidden="true" className="mx-auto w-full max-w-sm lg:mx-0">
       {/* printer slot */}
       <div className="relative z-10 mx-[-0.5rem] h-3 rounded-full bg-ink" />
 

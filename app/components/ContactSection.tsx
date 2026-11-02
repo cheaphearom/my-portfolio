@@ -47,14 +47,14 @@ export default function ContactSection({
   return (
     <section
       id={id}
-      className={`bg-ink text-cream ${fill ? "flex-1" : ""}`}
+      className={`scroll-mt-28 px-4 py-12 ${fill ? "flex flex-1 items-center" : ""}`}
     >
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-12">
+      <div className="glass-dark mx-auto grid w-full max-w-6xl gap-12 rounded-[2rem] px-6 py-14 md:grid-cols-12 md:px-12 md:py-20">
         <div className="md:col-span-6">
           <Heading className="text-balance text-4xl font-bold tracking-tight md:text-5xl">
             Let’s build something useful.
           </Heading>
-          <p className="mt-5 max-w-md text-lg text-cream/75">
+          <p className="mt-5 max-w-md text-lg text-cream/90">
             {withForm
               ? "Send a message, or reach me on any of these platforms."
               : "Message me on any of these platforms."}

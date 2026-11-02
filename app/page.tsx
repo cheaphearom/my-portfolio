@@ -22,12 +22,12 @@ export default async function Home() {
 
   return (
     <>
-      <header className="bg-cream text-ink">
-        <SiteNav />
+      <SiteNav />
 
-        <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 pb-24 pt-10 lg:grid-cols-[1.25fr_1fr] lg:pb-32 lg:pt-16">
-          <div>
-            <h1 className="text-balance text-[clamp(2.75rem,7vw,5.5rem)] font-bold leading-[0.98] tracking-[-0.03em]">
+      <header>
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-10 pt-10 lg:grid-cols-[1.35fr_1fr] lg:gap-0 lg:pb-16 lg:pt-16">
+          <div className="glass rounded-[2rem] px-7 py-10 md:px-12 md:py-14">
+            <h1 className="text-balance text-[clamp(2.5rem,5.6vw,4.9rem)] font-bold leading-[1] tracking-[-0.03em]">
               Phearom builds the backend behind orders, payments and POS.
             </h1>
 
@@ -37,16 +37,16 @@ export default async function Home() {
               structure.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-3">
               <a
                 href="#work"
-                className="rounded-md bg-ink px-6 py-3 font-semibold text-cream"
+                className="rounded-full bg-ink px-6 py-3 font-semibold text-cream shadow-lg shadow-ink/25"
               >
                 View work
               </a>
               <a
                 href="#contact"
-                className="rounded-md border border-ink px-6 py-3 font-semibold"
+                className="glass rounded-full px-6 py-3 font-semibold"
               >
                 Contact me
               </a>
@@ -55,7 +55,7 @@ export default async function Home() {
                   href={profile.cvUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-md border border-ink px-6 py-3 font-semibold"
+                  className="glass rounded-full px-6 py-3 font-semibold"
                 >
                   Download CV
                 </a>
@@ -63,35 +63,42 @@ export default async function Home() {
             </div>
           </div>
 
-          <Receipt />
+          {/* The receipt overlaps the pane's right edge, as if printed over it. */}
+          <div className="relative z-10 lg:-ml-10 lg:mt-24">
+            <Receipt />
+          </div>
         </div>
 
-        <KramaBand />
+        <div className="mx-auto max-w-6xl px-4">
+          <KramaBand className="overflow-hidden rounded-full" />
+        </div>
       </header>
 
       <main>
-        <section id="about" className="scroll-mt-4 bg-paper">
-          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-12">
+        <section id="about" className="scroll-mt-28">
+          <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-12 md:py-24">
             <div className="md:col-span-5">
-              <h2 className="text-balance text-4xl font-bold tracking-tight md:text-5xl">
+              <h2 className="glass inline-block rounded-2xl px-5 py-2 text-balance text-4xl font-bold tracking-tight md:text-5xl">
                 Developer focused on real business systems.
               </h2>
 
-              <Portrait className="mt-12 max-w-[18rem]" />
+              <Portrait className="mt-10 max-w-[18rem]" />
             </div>
 
             <div className="md:col-span-6 md:col-start-7">
-              <p className="max-w-[56ch] text-lg leading-8 text-slate">
-                {profile.about}
-              </p>
+              <div className="glass rounded-3xl p-7">
+                <p className="max-w-[56ch] text-lg leading-8 text-slate">
+                  {profile.about}
+                </p>
+              </div>
 
-              <div className="mt-10">
+              <div className="mt-6">
                 <SkillList skills={skills} />
               </div>
 
               <Link
                 href="/about"
-                className="mt-8 inline-block font-semibold text-ink underline underline-offset-4"
+                className="glass mt-6 inline-block rounded-full px-6 py-3 font-semibold"
               >
                 More about me
               </Link>
@@ -99,9 +106,9 @@ export default async function Home() {
           </div>
         </section>
 
-        <section id="work" className="scroll-mt-4 bg-cream">
-          <div className="mx-auto max-w-6xl px-6 py-24">
-            <h2 className="mb-12 text-4xl font-bold tracking-tight md:text-5xl">
+        <section id="work" className="scroll-mt-28">
+          <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+            <h2 className="glass inline-block rounded-2xl px-5 py-2 mb-10 text-4xl font-bold tracking-tight md:text-5xl">
               Selected projects
             </h2>
 
@@ -109,7 +116,7 @@ export default async function Home() {
 
             <Link
               href="/work"
-              className="mt-8 inline-block font-semibold text-ink underline underline-offset-4"
+              className="glass mt-8 inline-block rounded-full px-6 py-3 font-semibold"
             >
               See all projects
             </Link>
@@ -117,7 +124,6 @@ export default async function Home() {
         </section>
 
         <ContactSection id="contact" profile={profile} />
-        <KramaBand />
       </main>
 
       <SiteFooter />

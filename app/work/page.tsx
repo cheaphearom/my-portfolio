@@ -16,8 +16,8 @@ export default async function WorkPage() {
       <SiteNav />
 
       <main className="flex-1">
-        <div className="mx-auto max-w-6xl px-6 pb-24 pt-10">
-          <h1 className="mb-14 text-5xl font-bold tracking-[-0.03em] md:text-7xl">
+        <div className="mx-auto max-w-6xl px-4 pb-16 pt-12 md:pt-16">
+          <h1 className="glass inline-block rounded-2xl px-5 py-2 mb-12 text-5xl font-bold tracking-[-0.03em] md:text-7xl">
             My work
           </h1>
 
