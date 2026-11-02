@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
 import ContactSection from "../components/ContactSection";
+import { getProfile } from "../lib/content";
 
 export const metadata: Metadata = { title: "Contact" };
 
-export default function ContactPage() {
+export const revalidate = 60;
+
+export default async function ContactPage() {
+  const profile = await getProfile();
+
   return (
     <>
       <div className="bg-ink">
@@ -13,7 +18,7 @@ export default function ContactPage() {
       </div>
 
       <main className="flex flex-1 flex-col">
-        <ContactSection fill asPageTitle />
+        <ContactSection profile={profile} fill asPageTitle withForm />
       </main>
 
       <SiteFooter />

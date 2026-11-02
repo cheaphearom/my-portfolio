@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
 import ProjectLedger from "../components/ProjectLedger";
-import { projects } from "../data";
+import { getProjects } from "../lib/content";
 
 export const metadata: Metadata = { title: "Work" };
 
-export default function WorkPage() {
+export const revalidate = 60;
+
+export default async function WorkPage() {
+  const projects = await getProjects();
+
   return (
     <>
       <SiteNav />

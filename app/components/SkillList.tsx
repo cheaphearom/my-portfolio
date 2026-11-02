@@ -1,6 +1,6 @@
-import { skills } from "../data";
+import type { SkillView } from "../lib/content";
 
-export default function SkillList() {
+export default function SkillList({ skills }: { skills: SkillView[] }) {
   return (
     <dl className="border-b border-ink/20">
       {skills.map((skill) => (

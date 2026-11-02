@@ -14,13 +14,24 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
+const description =
+  "PHEAROM is a backend developer building APIs, mobile app integrations, POS systems and web applications.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  ),
   title: {
     default: "PHEAROM | Backend developer",
     template: "%s | PHEAROM",
   },
-  description:
-    "PHEAROM is a backend developer building APIs, mobile app integrations, POS systems and web applications.",
+  description,
+  openGraph: {
+    title: "PHEAROM | Backend developer",
+    description,
+    type: "website",
+    siteName: "PHEAROM.DEV",
+  },
 };
 
 export default function RootLayout({

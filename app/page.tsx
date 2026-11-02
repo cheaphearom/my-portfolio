@@ -7,9 +7,19 @@ import SkillList from "./components/SkillList";
 import ContactSection from "./components/ContactSection";
 import KramaBand from "./components/KramaBand";
 import Portrait from "./components/Portrait";
-import { projects } from "./data";
+import { getProfile, getProjects, getSkills } from "./lib/content";
 
-export default function Home() {
+// Re-generated in the background at most once a minute; admin saves also
+// trigger an immediate refresh via revalidatePath.
+export const revalidate = 60;
+
+export default async function Home() {
+  const [profile, projects, skills] = await Promise.all([
+    getProfile(),
+    getProjects(),
+    getSkills(),
+  ]);
+
   return (
     <>
       <header className="bg-cream text-ink">
@@ -40,6 +50,16 @@ export default function Home() {
               >
                 Contact me
               </a>
+              {profile.cvUrl ? (
+                <a
+                  href={profile.cvUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md border border-ink px-6 py-3 font-semibold"
+                >
+                  Download CV
+                </a>
+              ) : null}
             </div>
           </div>
 
@@ -62,15 +82,11 @@ export default function Home() {
 
             <div className="md:col-span-6 md:col-start-7">
               <p className="max-w-[56ch] text-lg leading-8 text-slate">
-                I have experience building backend APIs, payment integrations,
-                loyalty systems, POS integrations, school management systems,
-                dashboards, and automation workflows. I care about clean
-                structure, performance, reusable code, and real production
-                usage.
+                {profile.about}
               </p>
 
               <div className="mt-10">
-                <SkillList />
+                <SkillList skills={skills} />
               </div>
 
               <Link
@@ -100,7 +116,7 @@ export default function Home() {
           </div>
         </section>
 
-        <ContactSection id="contact" />
+        <ContactSection id="contact" profile={profile} />
         <KramaBand />
       </main>
 
